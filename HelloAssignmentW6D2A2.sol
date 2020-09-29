@@ -91,7 +91,7 @@ contract HelloAssignmentW6D2A2 {
             )
         );
         
-        if (updating1 = true) {
+        if (updating1 == true) {
             emit personUpdated(beforeUpdatedName1, beforeUpdatedAge1, beforeUpdatedHeight1, beforeUpdatedAlreadyTwentyOne1, newPerson1.name, newPerson1.age, newPerson1.height, newPerson1.alreadyTwentyOne);
         } else {
             emit personCreated(newPerson1.name, newPerson1.age, newPerson1.height, newPerson1.alreadyTwentyOne); 
