@@ -66,9 +66,9 @@ contract HelloAssignmentW6D2A2 {
             newPerson1.alreadyTwentyOne = false;
         }
         insertPerson(newPerson1);
-        creators.push(msg.sender);
+        
         // structs cannot be compared to each other, so both need to be turned into hexadecimal ( abi.encodePacked ) and hashed and these hashes compared. 
-        //Spaced like this just learning, normally all in one line.
+        // Spaced like this just learning, normally all in one line.
         assert(
             keccak256(
                 abi.encodePacked(
@@ -94,6 +94,7 @@ contract HelloAssignmentW6D2A2 {
         if (updating1 == true) {
             emit personUpdated(beforeUpdatedName1, beforeUpdatedAge1, beforeUpdatedHeight1, beforeUpdatedAlreadyTwentyOne1, newPerson1.name, newPerson1.age, newPerson1.height, newPerson1.alreadyTwentyOne);
         } else {
+            creators.push(msg.sender);
             emit personCreated(newPerson1.name, newPerson1.age, newPerson1.height, newPerson1.alreadyTwentyOne); 
         }           
     }
